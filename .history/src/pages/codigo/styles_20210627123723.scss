@@ -1,0 +1,13 @@
+.codigo-de-barras{
+    display: flex;
+    jus
+    padding-top: 20px;
+    gap: 45px;
+
+    .boxs-area{
+        width: 72vw;
+        display: flex;
+        flex-direction: row;
+        background: red;
+    }
+}
