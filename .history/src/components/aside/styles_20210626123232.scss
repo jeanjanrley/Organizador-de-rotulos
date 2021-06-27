@@ -1,0 +1,16 @@
+aside{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: baseline;
+    
+    width: 5vw;
+    height: 100vh;
+    background: #FF9A00;
+
+    > img{
+        width: 35px;
+        height: 35px;
+    }
+}

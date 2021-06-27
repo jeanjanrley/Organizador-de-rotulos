@@ -1,0 +1,29 @@
+.Home{
+    gap: 70px;
+    
+    .filterArea{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .contra-rotulo{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        gap: 10px;
+
+        .filterRotulo{
+            width: 72vw;
+            height: 30px;
+            background: yellow;
+        }
+
+        > textarea{
+            width: 72vw;
+        }
+    }
+}
+
+

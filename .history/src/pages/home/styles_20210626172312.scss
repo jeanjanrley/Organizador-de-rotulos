@@ -1,0 +1,97 @@
+.Home{
+    padding-top: 20px;
+    gap: 45px;
+    
+    .filterArea{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5px;
+        width: 72vw;
+
+    }
+
+    .contra-rotulo{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        gap: 5px;
+
+        .contra-rotulo-count{
+            display: flex;
+            width: 72vw;
+            justify-content: space-between;
+        }
+
+        .filter-rotulo{
+            width: 72vw;
+            height: 35px;
+            border-radius: 5px;
+
+        }
+
+        span {
+            font-size: 16pt;
+        }
+
+        > textarea{
+            width: 72vw;
+            resize: vertical;
+            min-height: 25vh;
+            border-radius: 10px;
+
+        }
+
+        button{
+            height: 50px;
+            width: 72vw;
+            border-radius: 5px;
+            font-size: 16pt;
+            color: #6D6D6D;
+        }
+
+        .contra-rotulo-space{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            width: 72vw;
+            overflow-y: auto;
+            height: 45vh;
+
+            >button{
+                margin: 15px;
+                width: 65vw;
+                border: transparent;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+                background: #FF9A00;
+                color: #fff;
+
+            }
+
+            >button:hover{
+                cursor: pointer;
+            }
+
+            .contra-rotulo-area{
+                width: 65vw;
+                padding: 10px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                align-items: center;
+                width: 72vw;
+                gap: 25px;
+                
+
+
+            }
+        }
+    }
+}
+
+

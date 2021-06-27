@@ -1,0 +1,7 @@
+import React from 'react'
+
+export deafult function Aside(props) {
+    return(
+        <div></div>
+    )
+}}

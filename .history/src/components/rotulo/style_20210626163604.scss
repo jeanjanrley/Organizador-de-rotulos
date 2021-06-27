@@ -1,0 +1,72 @@
+.rotulo{
+    width: 72vw;
+    height: 40vh;
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    
+    .title-rotulo{
+        padding: 5px 15px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        
+        img{
+            width: 5vh;
+            height: 5vh;
+        }
+        h2{
+            color: #232443;
+        }
+    }
+
+    .sub-rotulo{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 20px;
+
+        textarea{
+            width: 100px;
+            height: 100px;
+        }
+        
+        div{
+            display: flex;
+            height: 140px;
+            width: 100px;
+            background: #232443;
+            
+            div{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+
+
+                > span{
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+        
+        .codigo-de-barras{
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+            height: 140px;
+            width: 250px;
+            
+
+            img{
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+    }
+    
+}

@@ -1,0 +1,22 @@
+.rotulo{
+    width: 72vw;
+    height: 30vh;
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: row;
+
+    .title-rotulo{
+        display: flex;
+        flex-direction: row;
+        
+        img{
+            width: 5vh;
+            height: 5vh;
+        }
+        h2{
+            color: #232443
+        }
+    }
+
+}

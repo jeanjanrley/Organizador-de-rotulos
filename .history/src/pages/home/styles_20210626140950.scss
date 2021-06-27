@@ -1,0 +1,20 @@
+.Home{
+    gap: 70px;
+
+
+    .contra-rotulo{
+        display: flex;
+        flex-direction: column;
+        textarea{
+            width: 7vw;
+        }
+    }
+}
+
+
+
+.filterArea{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

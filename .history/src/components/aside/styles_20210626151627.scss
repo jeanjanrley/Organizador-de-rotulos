@@ -1,0 +1,55 @@
+aside{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: baseline;
+
+    width: 5vw;
+    height: 100vh;
+    background: #FF9A00;
+
+    > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 10px 0;
+        transition: 0.5s;
+        gap: 10px;
+
+
+
+        img{
+            width: 4vh;
+            height: 4vh;
+            margin-bottom: 2vh;
+        }
+        .Link{
+            display: none,
+            
+        }
+    }
+
+    > div:hover{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+        background: #CC7B00;
+        padding: 1vh 0;
+
+
+        img{
+            width: 4vh;
+            height: 4vh;
+            margin-bottom: 2vh;
+        }
+        .Link{
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.Home{
+    gap: 70px;
+
+
+    div{
+        textarea{
+            width: 75vw;
+        }
+    }
+}
+
+
+
+.filterArea{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

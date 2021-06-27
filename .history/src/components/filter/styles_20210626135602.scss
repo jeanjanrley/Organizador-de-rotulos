@@ -1,0 +1,17 @@
+.filter{
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+
+    > span{
+        font-size: 24pt;
+
+    }
+
+    > input {
+        width: 200px;
+        height: 40px;
+        border-radius: 5px;
+        background: #F6F6F6;
+    }
+}

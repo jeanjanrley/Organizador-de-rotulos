@@ -1,0 +1,19 @@
+.Home{
+    gap: 70px;
+
+    div{
+
+
+        inputarea{
+            width: 8000px;
+            background: blue;
+        }
+
+    }
+}
+
+.filterArea{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

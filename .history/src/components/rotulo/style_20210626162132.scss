@@ -1,0 +1,34 @@
+.rotulo{
+    width: 72vw;
+    height: 30vh;
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    
+    .title-rotulo{
+        padding: 5px 15px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        
+        img{
+            width: 5vh;
+            height: 5vh;
+        }
+        h2{
+            color: #232443;
+        }
+    }
+
+    .sub-rotulo{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        
+
+    }
+
+}
