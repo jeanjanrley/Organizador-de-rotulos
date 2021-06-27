@@ -1,0 +1,11 @@
+.fragrancia{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    > h1, input, button, .list-area{
+        width: 72vw;
+    }
+}
