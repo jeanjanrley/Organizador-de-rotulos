@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Aside from '../../components/aside/index'
 import Filter from '../../components/filter/index'
 import Rotulo from '../../components/rotulo/index'
@@ -8,16 +8,21 @@ import '../home/styles.scss'
 
 
 export default function Home(){
-
     
 
     const dbRef = firebase.database().ref('rotulos/');
     
-    dbRef.get().then((rotulo) => {
-    if (rotulo.exists()) {
-        const categorias = rotulo.val()
-        const categoria = Object.entries(categorias)
-        console.log(categoria)
+    dbRef.get().then((resultado) => {
+    if (resultado.exists()) {
+        const rotulos = resultado.val()
+        const arrayDeRotulos = Object.entries(rotulos)
+        const arrayDeRotulosTratados = arrayDeRotulos.map((objetoRotulo) => {
+            const rotulo = Object.entries(objetoRotulo[1])
+            const dado = rotulo[0].map((data) => {
+                console.log(data)
+            })
+        })
+
         
 
 
@@ -27,6 +32,7 @@ export default function Home(){
     }).catch((error) => {
     console.error(error);
     });
+
 
 
 
