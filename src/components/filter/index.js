@@ -15,7 +15,7 @@ export default function(props){
                 name={props.id}
                 id={props.id}
                 placeholder={props.placeholder}
-                type={props.type == null ? "text" :  props.type}
+                type={props.type == null ? "text " :  props.type}
             />
             <datalist id={props.id}>
                 <option value={props.value}/>
