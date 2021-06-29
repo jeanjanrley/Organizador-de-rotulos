@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Aside from '../../components/aside/index'
 import Filter from '../../components/filter/index'
 import {firebase} from '../../services/firebase'
+import Medida from '../../components/medida/index'
 
 import './styles.scss'
 
@@ -9,16 +10,16 @@ import './styles.scss'
 export default function Home(){
     const [categoria, setCategoria] = useState('')
     const [fragrancia, setFragrancia] = useState('')
-    const [volume, setVolume] = useState('')
+    const [medida, setMedida] = useState('')
     const [data, setData] = useState('')
     const [contraRotulos, setContraRotulos] = useState('')
     const [contraRotulo, setContraRotulo] = useState('')
 
-    function writeRotulo(categoria, fragrancia, volume, data, contraRotulo) {
-        firebase.database().ref('rotulos/' + `${categoria}/${categoria} - ${fragrancia} - ${volume}`).set({
+    function writeRotulo(categoria, fragrancia, medida, data, contraRotulo) {
+        firebase.database().ref('rotulos/' + `${categoria}/${categoria} - ${fragrancia} - ${medida}`).set({
           categoria: categoria,
           fragrancia: fragrancia,
-          volume: volume,
+          medida: medida,
           data: data,
           contraRotulo: contraRotulo,
         });
@@ -36,7 +37,7 @@ export default function Home(){
                 <div className="filterArea">
                     <Filter title="Categoria" setState={setCategoria} value={categoria}/>
                     <Filter title="Fragrancia" setState={setFragrancia} value={fragrancia}/>
-                    <Filter title="Volume" setState={setVolume} value={volume}/>
+                    <Medida title="Medida" setState={setMedida} value={medida}  type="number" placeholder="valor"/>
                 </div>
 
                 <div className="contra-rotulo">
@@ -72,7 +73,7 @@ export default function Home(){
 
 
                     </div>
-                    <button onClick={() => writeRotulo(categoria, fragrancia, volume, data, contraRotulo)} type="button">Enviar</button>
+                    <button onClick={() => writeRotulo(categoria, fragrancia, medida, data, contraRotulo)} type="button">Enviar</button>
                 </div>
 
 

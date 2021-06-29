@@ -1,0 +1,28 @@
+.medida{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    span{
+        font-size: 16pt;
+    }
+
+    .medida-area{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 250px;
+
+        .select, .input-medida{
+            width: 120px;
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        .select, option{
+            font-weight: 600;
+        }
+
+        
+    }
+}
