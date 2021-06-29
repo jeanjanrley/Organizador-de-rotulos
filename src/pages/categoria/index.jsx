@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Aside from '../../components/aside/index'
 import './styles.scss'
 import lupa from '../../assets/icons/lupa.svg'

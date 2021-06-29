@@ -10,24 +10,24 @@ export default function Rotulo(props){
 
             <div className="title-rotulo">
                 <img src={save} alt="salvar"/>
-                <h2>Aromatizante | Cereja e Aveia | 25 ml</h2>
+                <h2>{props.title}</h2>
                 <input type="checkbox"/>
             </div>
 
             <div className="sub-rotulo">
                 <textarea/>
 
-                <div clasName="rotuloDados">
+                <div className="rotuloDados">
                     <div>
-                        <span>Lote:</span> <span>20550055</span>
+                        <span>Lote:</span> <span>{props.lote}</span>
                     </div>
 
                     <div>
-                        <span>D. Prod:</span> <span>10/06/2020</span>
+                        <span>D. Prod:</span> <span>{props.data}</span>
                     </div>
 
                     <div>
-                        <span>D. Val:</span> <span>10/06/2020</span>
+                        <span>D. Val:</span> <span>{props.validade}</span>
                     </div>
                 </div>
 

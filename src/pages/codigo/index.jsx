@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Aside from '../../components/aside/index'
 import './styles.scss'
 import codigo from '../../assets/icons/codigo.png'

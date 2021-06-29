@@ -8,10 +8,7 @@ import '../home/styles.scss'
 
 
 export default function Home(){
-    
-
-    var arrayDeObejtosDefinitivo = []
-
+    var tudo = []
     const dbRef = firebase.database().ref('rotulos/');
     
     dbRef.get().then((resultado) => {
@@ -20,20 +17,26 @@ export default function Home(){
         const objRotulos = Object.values(rotulos).map((objetosDoArray) => {
             const objetoDeCadaObjetoDoArray = Object.values(objetosDoArray)
             const arrayDeObjetos = objetoDeCadaObjetoDoArray.map((objeto) => {
-                arrayDeObejtosDefinitivo.push(objeto)
+                tudo.push(objeto)
+                //console.log(objeto)
+                return objeto
             })
+            
         })
     } else {
         console.log("Nenhum dado foi encontrado!");
     }
-    }).catch((error) => {
-    console.error(error);
-    });
+}).catch((error) => {
+    console.log("O Bgl ficou doido ai em..");
+});
 
-    console.log(arrayDeObejtosDefinitivo)
+console.log(tudo[7])
+var [arrayDeObejtosDefinitivo, setArrayDeObejtosDefinitivo] = useState(tudo)
+console.log(arrayDeObejtosDefinitivo)
 
-
-
+     const RotulosList = arrayDeObejtosDefinitivo.map((objeto, index) => {
+        return(<Rotulo key={index} title={`${objeto.categoria} | ${objeto.fragrancia} | ${objeto.medida} - ml `}  lote={objeto.lote} data={objeto.dataDeProdução} validade={objeto.validade}/>)            
+    })
 
     return(
         <div className="Page">
@@ -51,15 +54,12 @@ export default function Home(){
                 <div className="contra-rotulo">
                     <div className="contra-rotulo-count">
                         <span>Contra rotulo(s):</span>
-                        <span>{50+1000}</span>
+                        <span>{arrayDeObejtosDefinitivo.length}</span>
                     </div>
                     <div className="contra-rotulo-space">
                         <button className="edicao">Habilitar edição</button>
                         <div className="contra-rotulo-area">
-                            <Rotulo/>
-                            <Rotulo/>
-                            <Rotulo/>
-                            <Rotulo/>
+                            {RotulosList}
                         </div>
                     </div>
                 </div>
