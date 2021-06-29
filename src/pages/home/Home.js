@@ -54,8 +54,9 @@ export default function Home(){
                     </datalist>
 
                     <textarea
-                         value={contraRotulo}
-                         onChange={(event) => setContraRotulo(event.target.value)}
+                        placeholder="Digite os dados do contra rotulo"
+                        value={contraRotulo}
+                        onChange={(event) => setContraRotulo(event.target.value)}
                     />
                     <button onClick={() => writeRotulo(categoria, fragrancia, volume, data, contraRotulo)} type="button">Enviar</button>
                 </div>

@@ -28,9 +28,10 @@ aside{
             margin-bottom: 2vh;
         }
         .Link{
-            display: none,
+            display: none;
             
         }
+
     }
 
     > div:hover{
@@ -51,14 +52,16 @@ aside{
         img:hover{
             cursor: pointer;
         }
-
+        
         .Link{
             display: flex;
+            
         }
-
-        .link:hover{
-            cursor: pointer;
-        }
+        
+        .Link:hover{
+            border-bottom: 1px solid #fff;            
+            }
+        
     }
 
     .unic{
@@ -94,6 +97,17 @@ aside{
     .unic:hover{
         background: #CC7B00;
         padding: 10px 0;
+        border: none;
+        
+        .Link{
+            border-bottom: 1px solid #fff;
+
+            >img{
+                margin: 2px;
+            }
+        }
 
     }
+
+
 }

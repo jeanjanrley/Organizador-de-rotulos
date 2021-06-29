@@ -37,8 +37,9 @@
         }
 
         > textarea{
+            padding: 10px;
             width: 72vw;
-            resize: vertical;
+            resize: none;
             min-height: 25vh;
             border-radius: 10px;
 

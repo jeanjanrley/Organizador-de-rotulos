@@ -36,8 +36,10 @@ export default function CodigoDeBarras() {
                     C-R
                 </Link>
             </div>
-            <div className="direct">
+            <div className="direct unic">
+                <Link className="Link" to={'/send'}>
                     <img src={direct} />
+                </Link>
             </div>
             <div className="codigo unic">
                 <Link className="Link" to={'/codigo-de-barras'}>
