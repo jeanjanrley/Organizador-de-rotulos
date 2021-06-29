@@ -12,7 +12,7 @@ export default function(props){
                 list={props.id}
                 name={props.id}
                 id={props.id}
-                placeholder={"digite a " + props.title}
+                placeholder={props.placeholder}
             />
             <datalist id={props.id}>
                 <option value={props.value}/>

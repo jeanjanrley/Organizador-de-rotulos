@@ -17,7 +17,7 @@
         flex-direction: column;
         align-items: left;
         justify-content: left;
-        gap: 5px;
+        gap: 10px;
 
         .contra-rotulo-count{
             display: flex;
@@ -25,32 +25,67 @@
             justify-content: space-between;
         }
 
-        .filter-rotulo{
-            width: 72vw;
-            height: 35px;
-            border-radius: 5px;
-
-        }
+        
 
         span {
             font-size: 16pt;
         }
 
-        > textarea{
-            padding: 10px;
+        .data-rotulos{
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: row;
+            justify-content: space-between;
             width: 72vw;
-            resize: none;
-            min-height: 25vh;
-            border-radius: 10px;
+            min-height: 35vh;
 
+
+            .contra-rotulo-area{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 70%;
+                
+                .filter-rotulo{
+                    width: 100%;
+                    height: 35px;
+                    border-radius: 5px;
+        
+                }
+
+                > textarea{
+                    width: 100%;
+                    padding: 10px;
+                    resize: none;
+                    min-height: 28vh;
+                    border-radius: 10px;
+        
+                }
+
+
+
+            }
+
+            .sub-filters-area{
+                display: flex;
+                flex-direction: column;
+
+                .Filter{
+                    width: 30%;
+                }
+            }
         }
 
         button{
             height: 50px;
             width: 72vw;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 16pt;
             color: #6D6D6D;
+        }
+
+        button:hover{
+            cursor: pointer;
         }
 
         .contra-rotulo-space{

@@ -37,27 +37,39 @@ export default function Home(){
                     <Filter title="Categoria" setState={setCategoria} value={categoria}/>
                     <Filter title="Fragrancia" setState={setFragrancia} value={fragrancia}/>
                     <Filter title="Volume" setState={setVolume} value={volume}/>
-                    <Filter title="data" setState={setData} value={data}/>
                 </div>
 
                 <div className="contra-rotulo">
                     <span>Contra rotulo</span>
 
-                    <input
-                    value={contraRotulos}
-                    onChange={(event) => setContraRotulos(event.target.value)}
-                    list="contra-rotulos"
-                    className="filter-rotulo"/>
+                    
+                    <div className="data-rotulos">
+                        
+                        <div className="contra-rotulo-area">
+                            <input
+                            value={contraRotulos}
+                            onChange={(event) => setContraRotulos(event.target.value)}
+                            list="contra-rotulos"
+                            className="filter-rotulo"/>
 
-                    <datalist id='contra-rotulos'>
-                        <option value='Aromatizante - Cereja e aveia - 250 ml'/>
-                    </datalist>
+                            <datalist id='contra-rotulos'>
+                                <option value='Aromatizante - Cereja e aveia - 250 ml'/>
+                            </datalist>
 
-                    <textarea
-                        placeholder="Digite os dados do contra rotulo"
-                        value={contraRotulo}
-                        onChange={(event) => setContraRotulo(event.target.value)}
-                    />
+                            <textarea
+                                placeholder="Digite os dados do contra rotulo"
+                                value={contraRotulo}
+                                onChange={(event) => setContraRotulo(event.target.value)}
+                            />
+                        </div>
+                        
+                        <div className="sub-filters-area">
+                            <Filter className="Filter" title="Lote" placeholder="lote da fragrancia"/>
+                            <Filter className="Filter" title="data" placeholder="Data de produção" setState={setData} value={data}/>
+                        </div>
+
+
+                    </div>
                     <button onClick={() => writeRotulo(categoria, fragrancia, volume, data, contraRotulo)} type="button">Enviar</button>
                 </div>
 
