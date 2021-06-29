@@ -64,8 +64,10 @@ export default function Home(){
                         </div>
                         
                         <div className="sub-filters-area">
-                            <Filter className="Filter" title="Lote" placeholder="lote da fragrancia"/>
-                            <Filter className="Filter" title="data" placeholder="Data de produção" setState={setData} value={data}/>
+                            <Filter className="Filter" placeholder="lote da fragrancia"/>
+                            <Filter className="Filter" placeholder="Data de produção" type="date" setState={setData} value={data}/>
+                            <Filter className="Filter" type="number" placeholder="Validade em anos"/>
+                            <Filter className="Filter" placeholder="Responsavel tecnico"/>
                         </div>
 
 

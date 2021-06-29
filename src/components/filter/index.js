@@ -5,7 +5,7 @@ export default function(props){
 
     return(
         <div className="filter">
-            <span>{props.title}</span>
+            {props.title == null ? <></> :  <span>{props.title}</span>}
             <input
                 value={props.value}
                 onChange={(event) => props.setState(event.target.value)}
@@ -13,6 +13,7 @@ export default function(props){
                 name={props.id}
                 id={props.id}
                 placeholder={props.placeholder}
+                type={props.type == null ? "text" :  props.type}
             />
             <datalist id={props.id}>
                 <option value={props.value}/>
