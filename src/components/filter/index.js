@@ -6,6 +6,8 @@ export default function(props){
     return(
         <div className="filter">
             {props.title == null ? <></> :  <span>{props.title}</span>}
+            {props.subTitle == null ? <></> :  <span className="sub-title">{props.subTitle}</span>}
+
             <input
                 value={props.value}
                 onChange={(event) => props.setState(event.target.value)}

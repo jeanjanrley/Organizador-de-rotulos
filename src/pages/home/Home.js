@@ -10,17 +10,23 @@ import './styles.scss'
 export default function Home(){
     const [categoria, setCategoria] = useState('')
     const [fragrancia, setFragrancia] = useState('')
-    const [medida, setMedida] = useState('')
-    const [data, setData] = useState('')
-    const [contraRotulos, setContraRotulos] = useState('')
+    const [medida, setMedida] = useState({})
+    const [lote, setLote] = useState('')
+    const [data, setData] = useState({})
+    const [validade, setValidade] = useState(null)
+    const [responsavel, setResponsavel] = useState('')
     const [contraRotulo, setContraRotulo] = useState('')
+    const [contraRotulos, setContraRotulos] = useState('')
 
-    function writeRotulo(categoria, fragrancia, medida, data, contraRotulo) {
+    function writeRotulo(categoria, fragrancia, medida, lote, data, validade, responsavel, contraRotulo) {
         firebase.database().ref('rotulos/' + `${categoria}/${categoria} - ${fragrancia} - ${medida}`).set({
           categoria: categoria,
           fragrancia: fragrancia,
           medida: medida,
-          data: data,
+          lote: lote,
+          dataDeProdução: data,
+          validade: validade,
+          responsavel: responsavel,
           contraRotulo: contraRotulo,
         });
       }
@@ -65,15 +71,15 @@ export default function Home(){
                         </div>
                         
                         <div className="sub-filters-area">
-                            <Filter className="Filter" placeholder="lote da fragrancia"/>
-                            <Filter className="Filter" placeholder="Data de produção" type="date" setState={setData} value={data}/>
-                            <Filter className="Filter" type="number" placeholder="Validade em anos"/>
-                            <Filter className="Filter" placeholder="Responsavel tecnico"/>
+                            <Filter className="Filter" placeholder="lote da fragrancia" setState={setLote}/>
+                            <Filter className="Filter" subTitle="data de produção" placeholder="Data de produção" type="date" setState={setData} value={data}/>
+                            <Filter className="Filter" type="number" placeholder="Validade em anos" setState={setValidade}/>
+                            <Filter className="Filter" placeholder="Responsavel tecnico" setState={setResponsavel}/>
                         </div>
 
 
                     </div>
-                    <button onClick={() => writeRotulo(categoria, fragrancia, medida, data, contraRotulo)} type="button">Enviar</button>
+                    <button onClick={() => writeRotulo(categoria, fragrancia, medida, lote, data, validade, responsavel, contraRotulo)} type="button">Enviar</button>
                 </div>
 
 
