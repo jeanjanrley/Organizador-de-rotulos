@@ -18,7 +18,7 @@ export default function Home(){
     const [contraRotulo, setContraRotulo] = useState('')
     const [contraRotulos, setContraRotulos] = useState('')
 
-    function writeRotulo(categoria, fragrancia, medida, lote, data, validade, responsavel, contraRotulo) {
+    function writeRotulo (categoria, fragrancia, medida, lote, data, validade, responsavel, contraRotulo) {
         firebase.database().ref('rotulos/' + `${categoria}/${categoria} | ${fragrancia} | ${medida}`).set({
           categoria: categoria,
           fragrancia: fragrancia,

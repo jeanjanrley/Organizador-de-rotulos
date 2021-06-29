@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Aside from '../../components/aside/index'
 import Filter from '../../components/filter/index'
 import Rotulo from '../../components/rotulo/index'
@@ -9,33 +9,35 @@ import '../home/styles.scss'
 
 export default function Home(){
     var tudo = []
-    const dbRef = firebase.database().ref('rotulos/');
-    
-    dbRef.get().then((resultado) => {
-    if (resultado.exists()) {
-        const rotulos = resultado.val()
-        const objRotulos = Object.values(rotulos).map((objetosDoArray) => {
-            const objetoDeCadaObjetoDoArray = Object.values(objetosDoArray)
-            const arrayDeObjetos = objetoDeCadaObjetoDoArray.map((objeto) => {
-                tudo.push(objeto)
-                //console.log(objeto)
-                return objeto
-            })
-            
-        })
-    } else {
-        console.log("Nenhum dado foi encontrado!");
-    }
-}).catch((error) => {
-    console.log("O Bgl ficou doido ai em..");
-});
 
-console.log(tudo[7])
+    const dbRef = firebase.database().ref('rotulos/').get().then((resultado) => {
+        if (resultado.exists()) {
+            const rotulos = resultado.val()
+            const objRotulos = Object.values(rotulos).map((objetosDoArray) => {
+                const objetoDeCadaObjetoDoArray = Object.values(objetosDoArray)
+                const arrayDeObjetos = objetoDeCadaObjetoDoArray.map((objeto) => {
+                    tudo.push(objeto)
+                    //console.log(objeto)
+                    return objeto
+                })
+                
+            })
+        } else {
+            console.log("Nenhum dado foi encontrado!");
+        }
+    }).catch((error) => {
+        console.log("O Bgl ficou doido ai em..");
+    });
+
+
+
+console.log(tudo)
 var [arrayDeObejtosDefinitivo, setArrayDeObejtosDefinitivo] = useState(tudo)
 console.log(arrayDeObejtosDefinitivo)
 
-     const RotulosList = arrayDeObejtosDefinitivo.map((objeto, index) => {
-        return(<Rotulo key={index} title={`${objeto.categoria} | ${objeto.fragrancia} | ${objeto.medida} - ml `}  lote={objeto.lote} data={objeto.dataDeProdução} validade={objeto.validade}/>)            
+    
+     const RotulosList = arrayDeObejtosDefinitivo.map((objeto) => {
+        return(<Rotulo title={`${objeto.categoria} | ${objeto.fragrancia} | ${objeto.medida} - ml `}  lote={objeto.lote} data={objeto.dataDeProdução} validade={objeto.validade}/>)            
     })
 
     return(
