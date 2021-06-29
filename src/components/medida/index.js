@@ -25,6 +25,7 @@ export default function(props){
                         </optgroup>
                         <optgroup label="Peso">
                             <option value="mg">mg</option>
+                            <option value="g">g</option>
                             <option value="Kg">Kg</option>
                         </optgroup>
                         <optgroup label="Comprimento">

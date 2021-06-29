@@ -2,11 +2,35 @@ import React from 'react';
 import Aside from '../../components/aside/index'
 import Filter from '../../components/filter/index'
 import Rotulo from '../../components/rotulo/index'
+import {firebase} from '../../services/firebase'
 
 import '../home/styles.scss'
 
 
 export default function Home(){
+
+    
+
+    const dbRef = firebase.database().ref('rotulos/');
+    
+    dbRef.get().then((rotulo) => {
+    if (rotulo.exists()) {
+        const categorias = rotulo.val()
+        const categoria = Object.entries(categorias)
+        console.log(categoria)
+        
+
+
+    } else {
+        console.log("Nenhum dado foi encontrado!");
+    }
+    }).catch((error) => {
+    console.error(error);
+    });
+
+
+
+
     return(
         <div className="Page">
             <Aside/>

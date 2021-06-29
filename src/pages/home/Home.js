@@ -19,7 +19,7 @@ export default function Home(){
     const [contraRotulos, setContraRotulos] = useState('')
 
     function writeRotulo(categoria, fragrancia, medida, lote, data, validade, responsavel, contraRotulo) {
-        firebase.database().ref('rotulos/' + `${categoria}/${categoria} - ${fragrancia} - ${medida}`).set({
+        firebase.database().ref('rotulos/' + `${categoria}/${categoria} | ${fragrancia} | ${medida}`).set({
           categoria: categoria,
           fragrancia: fragrancia,
           medida: medida,
@@ -41,8 +41,8 @@ export default function Home(){
 
                 <h1>Novo rotulo</h1>
                 <div className="filterArea">
-                    <Filter title="Categoria" setState={setCategoria} value={categoria}/>
-                    <Filter title="Fragrancia" setState={setFragrancia} value={fragrancia}/>
+                    <Filter placeholder="Ex: 'Sabonete liquido..'" title="Categoria" setState={setCategoria} value={categoria}/>
+                    <Filter placeholder="Ex: 'Lavanda..'" title="Fragrancia" setState={setFragrancia} value={fragrancia}/>
                     <Medida title="Medida" setState={setMedida} value={medida}  type="number" placeholder="valor"/>
                 </div>
 
