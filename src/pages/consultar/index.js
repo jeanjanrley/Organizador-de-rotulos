@@ -10,22 +10,19 @@ import '../home/styles.scss'
 export default function Home(){
     
 
+    var arrayDeObejtosDefinitivo = []
+
     const dbRef = firebase.database().ref('rotulos/');
     
     dbRef.get().then((resultado) => {
     if (resultado.exists()) {
         const rotulos = resultado.val()
-        const arrayDeRotulos = Object.entries(rotulos)
-        const arrayDeRotulosTratados = arrayDeRotulos.map((objetoRotulo) => {
-            const rotulo = Object.entries(objetoRotulo[1])
-            const dado = rotulo[0].map((data) => {
-                console.log(data)
+        const objRotulos = Object.values(rotulos).map((objetosDoArray) => {
+            const objetoDeCadaObjetoDoArray = Object.values(objetosDoArray)
+            const arrayDeObjetos = objetoDeCadaObjetoDoArray.map((objeto) => {
+                arrayDeObejtosDefinitivo.push(objeto)
             })
         })
-
-        
-
-
     } else {
         console.log("Nenhum dado foi encontrado!");
     }
@@ -33,6 +30,7 @@ export default function Home(){
     console.error(error);
     });
 
+    console.log(arrayDeObejtosDefinitivo)
 
 
 
