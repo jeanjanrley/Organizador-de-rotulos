@@ -12,7 +12,6 @@ import {firebase} from '../../services/firebase'
 export default function Categoria(props){
     const [inputed, setInputed] = useState('')
     const [listaDeCategorias, setListaDeCategorias] = useState([])
-    const [event, setEvent] = useState(false)
 
 
     useEffect(() => {
@@ -30,7 +29,7 @@ export default function Categoria(props){
         })
         console.log(listaDeCategorias)
         
-    },[event])
+    },[inputed])
 
 
 
@@ -67,7 +66,6 @@ export default function Categoria(props){
                 type="button"
                 onClick={() => {
                     writeRotulo(inputed)
-                    setEvent(!event)
                 }}
                 >
                     adcionar

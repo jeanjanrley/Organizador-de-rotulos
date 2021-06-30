@@ -28,10 +28,10 @@ export default function Categoria(props){
             setListaDeCategorias(0)
         }
         })
-        console.log(listaDeCategorias)
         
     },[event])
 
+    console.log(listaDeCategorias)
 
 
 
@@ -65,10 +65,7 @@ export default function Categoria(props){
                 </div>
                 <button
                 type="button"
-                onClick={() => {
-                    writeRotulo(inputed)
-                    setEvent(!event)
-                }}
+                onClick={() => writeRotulo(inputed), setEvent(!event)}
                 >
                     adcionar
                 </button>

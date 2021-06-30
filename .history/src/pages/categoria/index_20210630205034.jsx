@@ -67,7 +67,6 @@ export default function Categoria(props){
                 type="button"
                 onClick={() => {
                     writeRotulo(inputed)
-                    setEvent(!event)
                 }}
                 >
                     adcionar

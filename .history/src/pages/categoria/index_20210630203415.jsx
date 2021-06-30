@@ -12,26 +12,20 @@ import {firebase} from '../../services/firebase'
 export default function Categoria(props){
     const [inputed, setInputed] = useState('')
     const [listaDeCategorias, setListaDeCategorias] = useState([])
-    const [event, setEvent] = useState(false)
 
 
     useEffect(() => {
         var categorias = firebase.database().ref('categorias');
         categorias.on('value', (snapshot) => {
-        if(snapshot.val()){
-            const data = snapshot.val();
+        const data = snapshot.val();
         const arrayDeArrays = Object.entries(data)
         const arrayDeCategorias = arrayDeArrays.map(([key, value]) => {return(key)})
         setListaDeCategorias(arrayDeCategorias)
-        }
-        else{
-            setListaDeCategorias(0)
-        }
         })
-        console.log(listaDeCategorias)
         
-    },[event])
+    },[inputed])
 
+    console.log(listaDeCategorias)
 
 
 
@@ -41,10 +35,7 @@ export default function Categoria(props){
             firebase.database().ref('categorias/'+ categoria).set({
                 categoria: categoria,
             });
-        }else{
-            alert('Favor digite a categoria!')
         }
-        
       }
 
 
@@ -65,10 +56,7 @@ export default function Categoria(props){
                 </div>
                 <button
                 type="button"
-                onClick={() => {
-                    writeRotulo(inputed)
-                    setEvent(!event)
-                }}
+                onClick={() => writeRotulo(inputed)}
                 >
                     adcionar
                 </button>
@@ -78,7 +66,7 @@ export default function Categoria(props){
                     <span>{listaDeCategorias.length}</span>
                 </div>
                 <div className="list-area">
-                    {listaDeCategorias.length > 0 && listaDeCategorias.map((obj, index) => {return(
+                    {listaDeCategorias.map((obj, index) => {return(
                         <div key={index} className="item-list">{obj}</div> 
                     )})}
                 </div>  

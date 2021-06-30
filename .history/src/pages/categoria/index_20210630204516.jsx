@@ -28,10 +28,10 @@ export default function Categoria(props){
             setListaDeCategorias(0)
         }
         })
-        console.log(listaDeCategorias)
         
     },[event])
 
+    console.log(listaDeCategorias)
 
 
 

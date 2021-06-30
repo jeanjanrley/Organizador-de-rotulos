@@ -12,7 +12,6 @@ import {firebase} from '../../services/firebase'
 export default function Categoria(props){
     const [inputed, setInputed] = useState('')
     const [listaDeCategorias, setListaDeCategorias] = useState([])
-    const [event, setEvent] = useState(false)
 
 
     useEffect(() => {
@@ -28,10 +27,10 @@ export default function Categoria(props){
             setListaDeCategorias(0)
         }
         })
-        console.log(listaDeCategorias)
         
-    },[event])
+    },[inputed])
 
+    console.log(listaDeCategorias)
 
 
 
@@ -65,10 +64,7 @@ export default function Categoria(props){
                 </div>
                 <button
                 type="button"
-                onClick={() => {
-                    writeRotulo(inputed)
-                    setEvent(!event)
-                }}
+                onClick={() => writeRotulo(inputed)}
                 >
                     adcionar
                 </button>
@@ -78,7 +74,7 @@ export default function Categoria(props){
                     <span>{listaDeCategorias.length}</span>
                 </div>
                 <div className="list-area">
-                    {listaDeCategorias.length > 0 && listaDeCategorias.map((obj, index) => {return(
+                    {listaDeCategorias.length > 0 ? listaDeCategorias.map((obj, index) => {return(
                         <div key={index} className="item-list">{obj}</div> 
                     )})}
                 </div>  
