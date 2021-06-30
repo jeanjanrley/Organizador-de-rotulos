@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Aside from '../../components/aside/index'
 import './styles.scss'
 import lupa from '../../assets/icons/lupa.svg'
@@ -11,22 +11,15 @@ import {firebase} from '../../services/firebase'
 
 export default function Categoria(props){
     const [inputed, setInputed] = useState('')
-    const [listaDeCategorias, setListaDeCategorias] = useState([])
 
 
     useEffect(() => {
-        var categorias = firebase.database().ref('categorias');
-        categorias.on('value', (snapshot) => {
+        var starCountRef = firebase.database().ref('categorias');
+        starCountRef.on('value', (snapshot) => {
         const data = snapshot.val();
-        const arrayDeArrays = Object.entries(data)
-        const arrayDeCategorias = arrayDeArrays.map(([key, value]) => {return(key)})
-        setListaDeCategorias(arrayDeCategorias)
-        })
-        
-    },[inputed])
-
-    console.log(listaDeCategorias)
-
+        updateStarCount(postElement, data);
+        });
+    })
 
 
 
@@ -61,12 +54,9 @@ export default function Categoria(props){
                 <div className="separator"/>
                 <div className="status-area">
                     <span>total de categoria:</span>
-                    <span>{listaDeCategorias.length}</span>
+                    <span></span>
                 </div>
                 <div className="list-area">
-                    {listaDeCategorias.map((obj, index) => {return(
-                        <div key={index} className="item-list">{obj}</div> 
-                    )})}
                 </div>  
             </div>
         </div>

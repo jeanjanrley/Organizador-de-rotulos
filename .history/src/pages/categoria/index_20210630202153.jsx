@@ -61,11 +61,11 @@ export default function Categoria(props){
                 <div className="separator"/>
                 <div className="status-area">
                     <span>total de categoria:</span>
-                    <span>{listaDeCategorias.length}</span>
+                    <span></span>
                 </div>
                 <div className="list-area">
-                    {listaDeCategorias.map((obj, index) => {return(
-                        <div key={index} className="item-list">{obj}</div> 
+                    {listaDeCategorias.map((obg, index) => {return(
+                        <div key={index} className="item-list"></div> 
                     )})}
                 </div>  
             </div>

@@ -65,7 +65,7 @@ export default function Categoria(props){
                 </div>
                 <div className="list-area">
                     {listaDeCategorias.map((obj, index) => {return(
-                        <div key={index} className="item-list">{obj}</div> 
+                        <div key={index} className="item-list">{obj.categoria}</div> 
                     )})}
                 </div>  
             </div>

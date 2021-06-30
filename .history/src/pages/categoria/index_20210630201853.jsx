@@ -20,12 +20,12 @@ export default function Categoria(props){
         const data = snapshot.val();
         const arrayDeArrays = Object.entries(data)
         const arrayDeCategorias = arrayDeArrays.map(([key, value]) => {return(key)})
-        setListaDeCategorias(arrayDeCategorias)
-        })
+        },
+        console.log(arrayDeCategorias)
+        
+        )
         
     },[inputed])
-
-    console.log(listaDeCategorias)
 
 
 
@@ -61,12 +61,9 @@ export default function Categoria(props){
                 <div className="separator"/>
                 <div className="status-area">
                     <span>total de categoria:</span>
-                    <span>{listaDeCategorias.length}</span>
+                    <span></span>
                 </div>
                 <div className="list-area">
-                    {listaDeCategorias.map((obj, index) => {return(
-                        <div key={index} className="item-list">{obj}</div> 
-                    )})}
                 </div>  
             </div>
         </div>
