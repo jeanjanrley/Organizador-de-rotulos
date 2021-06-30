@@ -1,0 +1,131 @@
+.Home {
+    padding-top: 20px;
+    gap: 45px;
+    
+    .filterArea{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5px;
+        width: 72vw;
+
+    }
+
+    .contra-rotulo{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        gap: 10px;
+
+        .contra-rotulo-count{
+            display: flex;
+            width: 72vw;
+            justify-content: space-between;
+        }
+
+        
+
+        span {
+            font-size: 16pt;
+        }
+
+        .data-rotulos{
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 72vw;
+            min-height: 35vh;
+
+
+            .contra-rotulo-area{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 75%;
+                
+                .filter-rotulo{
+                    width: 100%;
+                    height: 35px;
+                    border-radius: 5px;
+        
+                }
+
+                > textarea{
+                    width: 100%;
+                    padding: 10px;
+                    resize: none;
+                    min-height: 28vh;
+                    border-radius: 10px;
+        
+                }
+
+
+
+            }
+
+            .sub-filters-area{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+
+        > button{
+            height: 50px;
+            width: 72vw;
+            border-radius: 10px;
+            font-size: 16pt;
+            color: #6D6D6D;
+        }
+
+        button:hover{
+            cursor: pointer;
+        }
+
+        .contra-rotulo-space{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            width: 72vw;
+            overflow-y: auto;
+            height: 55vh;
+
+            >button{
+                margin: 15px;
+                width: 65vw;
+                border: transparent;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+                background: #FF9A00;
+                color: #fff;
+
+            }
+
+            >button:hover{
+                cursor: pointer;
+            }
+
+            .contra-rotulo-area{
+                width: 65vw;
+                padding: 10px 0;
+                padding-top: 10px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                align-items: center;
+                width: 72vw;
+                gap: 25px;
+                
+
+
+            }
+        }
+    }
+}
+
+

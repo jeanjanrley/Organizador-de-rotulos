@@ -1,0 +1,118 @@
+.rotulo{
+    width: 65vw;
+    height: 43vh;
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    border: transparent;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    align-items: center;
+
+    
+    
+    .title-rotulo{
+        padding: 5px 15px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+        
+        .edit-save{
+            display: flex;
+            flex-direction: row;
+            width: 
+
+            img{
+                width: 4vh;
+                height: 4vh;
+            }
+            img:hover{
+               cursor: pointer;
+            }
+        }
+
+        h2{
+            color: #232443;
+            font-weight: 500;
+        }
+        
+        input:hover{
+            cursor: pointer;
+        }
+    }
+
+    .sub-rotulo{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 20px;
+        gap: 15px;
+
+        textarea{
+            width: 500px;
+            min-height: 150px;
+            resize: none;
+        }
+        
+        div{
+            display: flex;
+            box-sizing: border-box;
+            height: 150px;
+            width: 230px;
+            background: #232443;
+            flex-direction: column;
+            padding: 10px;
+            
+            div{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+
+
+                > span{
+                    font-size: 10pt;
+                    color: rgb(255, 255, 255);
+                }
+                > span:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        .codigo-de-barras{
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+            height: 150px;
+            width: 200px;
+            background: #ffff;
+            background: #232443;
+
+            
+
+            img{
+                width: 180px;
+                height: 128px;
+            }
+        }
+        
+    }
+    
+    > button{
+        border: none;
+        width: 62.5vw;
+        height: 35px;
+        border-radius: 7px;
+        background: #ff9a00;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        color: #fff;
+        font-weight: 600;
+
+    }
+}
