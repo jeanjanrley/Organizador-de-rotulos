@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import Aside from '../../components/aside/index'
 import './styles.scss'
 import lupa from '../../assets/icons/lupa.svg'
-import useGetDatas from '../hooks/getDatas'
 import {firebase} from '../../services/firebase'
 
 
@@ -12,7 +11,30 @@ import {firebase} from '../../services/firebase'
 
 export default function Categoria(props){
     const [inputed, setInputed] = useState('')
-    const {listaDeItems, listen, setListen} = useGetDatas('categorias')
+    const [listaDeCategorias, setListaDeCategorias] = useState([])
+    const [event, setEvent] = useState(false)
+
+
+    useEffect(() => {
+        var categorias = firebase.database().ref('categorias');
+        categorias.on('value').then(, (snapshot) => {
+            if(snapshot.val()){
+                const data = snapshot.val();
+            const arrayDeArrays = Object.entries(data)
+            const arrayDeCategorias = arrayDeArrays.map(([key, value]) => {return(key)})
+            setListaDeCategorias(arrayDeCategorias)
+            }
+            else{
+                setListaDeCategorias(0)
+            }
+            }))
+        console.log(listaDeCategorias)
+        
+    },[event])
+
+
+
+
 
     function writeRotulo(categoria) {
         if(categoria){
@@ -38,14 +60,14 @@ export default function Categoria(props){
                     type="text"
                     value={inputed}
                     onChange={(event) => setInputed(event.target.value)}
+
                     />
                 </div>
                 <button
                 type="button"
                 onClick={() => {
                     writeRotulo(inputed)
-                    setListen(!listen)
-                    setInputed('')
+                    setEvent(!event)
                 }}
                 >
                     adcionar
@@ -53,11 +75,11 @@ export default function Categoria(props){
                 <div className="separator"/>
                 <div className="status-area">
                     <span>total de categoria:</span>
-                    <span>{listaDeItems.length}</span>
+                    <span>{listaDeCategorias.length}</span>
                 </div>
                 <div className="list-area">
-                    {listaDeItems.map((item, index) => {return(
-                        <div key={index} className="item-list">{item}</div>
+                    {listaDeCategorias.length > 0 && listaDeCategorias.map((obj, index) => {return(
+                        <div key={index} className="item-list">{obj}</div> 
                     )})}
                 </div>  
             </div>

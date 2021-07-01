@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import Aside from '../../components/aside/index'
 import './styles.scss'
 import lupa from '../../assets/icons/lupa.svg'
-import useGetDatas from '../hooks/getDatas'
 import {firebase} from '../../services/firebase'
+import {useGetDatas}
 
 
 
@@ -12,7 +12,8 @@ import {firebase} from '../../services/firebase'
 
 export default function Categoria(props){
     const [inputed, setInputed] = useState('')
-    const {listaDeItems, listen, setListen} = useGetDatas('categorias')
+    
+
 
     function writeRotulo(categoria) {
         if(categoria){
@@ -38,14 +39,14 @@ export default function Categoria(props){
                     type="text"
                     value={inputed}
                     onChange={(event) => setInputed(event.target.value)}
+
                     />
                 </div>
                 <button
                 type="button"
                 onClick={() => {
                     writeRotulo(inputed)
-                    setListen(!listen)
-                    setInputed('')
+                    setEvent(!event)
                 }}
                 >
                     adcionar
@@ -53,11 +54,11 @@ export default function Categoria(props){
                 <div className="separator"/>
                 <div className="status-area">
                     <span>total de categoria:</span>
-                    <span>{listaDeItems.length}</span>
+                    <span>{listaDeCategorias.length}</span>
                 </div>
                 <div className="list-area">
-                    {listaDeItems.map((item, index) => {return(
-                        <div key={index} className="item-list">{item}</div>
+                    {listaDeCategorias.length > 0 && listaDeCategorias.map((obj, index) => {return(
+                        <div key={index} className="item-list">{obj}</div> 
                     )})}
                 </div>  
             </div>

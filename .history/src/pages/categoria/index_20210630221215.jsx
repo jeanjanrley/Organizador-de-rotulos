@@ -12,6 +12,7 @@ import {firebase} from '../../services/firebase'
 
 export default function Categoria(props){
     const [inputed, setInputed] = useState('')
+    
     const {listaDeItems, listen, setListen} = useGetDatas('categorias')
 
     function writeRotulo(categoria) {
@@ -45,7 +46,7 @@ export default function Categoria(props){
                 onClick={() => {
                     writeRotulo(inputed)
                     setListen(!listen)
-                    setInputed('')
+                    setInputed()
                 }}
                 >
                     adcionar
