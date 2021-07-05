@@ -1,0 +1,134 @@
+.rotulo{
+    width: 65vw;
+    height: 43vh;
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    border: transparent;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    align-items: center;
+
+    
+    
+    .title-rotulo{
+        padding: 5px 15px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+        
+        .edit-save{
+            display: flex;
+            flex-direction: row;
+            width: 9vh;
+            align-content: center;
+            justify-content: space-between;
+            gap: 15px;
+
+            img{
+                width: 4vh;
+                height: 4vh;
+            }
+            img:hover{
+               cursor: pointer;
+            }
+
+            .edit{
+                width: 4.5vh;
+                height: 4.5vh;
+            }
+        }
+
+        h2{
+            color: #232443;
+            font-weight: 500;
+        }
+        
+        input:hover{
+            cursor: pointer;
+        }
+    }
+
+    .sub-rotulo{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 20px;
+        gap: 15px;
+
+        textarea{
+            width: 500px;
+            min-height: 150px;
+            resize: none;
+        }
+        
+        div{
+            display: flex;
+            box-sizing: border-box;
+            height: 150px;
+            width: 230px;
+            background: #232443;
+            flex-direction: column;
+            
+            div{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 10px;
+
+
+                > span{
+                    font-size: 10pt;
+                    color: rgb(255, 255, 255);
+                }
+                > span:hover{
+                    cursor: pointer;
+                }
+
+                .input-list{
+                    text-align: right;
+                    background: #fdfdfd;
+                    width: 60%;
+                    height: 25px;
+                }
+            }
+        }
+        
+        .codigo-de-barras{
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+            height: 150px;
+            width: 200px;
+            background: #ffff;
+            background: #232443;
+
+            
+
+            img{
+                width: 180px;
+                height: 128px;
+            }
+        }
+        
+    }
+    
+    > button{
+        border: none;
+        width: 62.5vw;
+        height: 35px;
+        border-radius: 7px;
+        background: #ff9a00;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        color: #fff;
+        font-weight: 600;
+
+    }
+}
