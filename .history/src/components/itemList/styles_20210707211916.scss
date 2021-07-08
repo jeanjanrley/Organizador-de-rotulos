@@ -1,0 +1,29 @@
+.item-list{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    background: #555679;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    justify-content: space-between;
+
+    > .value{
+        color: #fff;
+        height: 15px;
+        background: none;
+        border: none;
+    }
+
+    .value:selected{
+        
+    }
+
+    
+}
+
+.item-list:hover{
+    cursor: pointer;
+}
