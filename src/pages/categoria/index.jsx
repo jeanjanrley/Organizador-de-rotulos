@@ -13,7 +13,7 @@ import ItemList from '../../components/itemList/index'
 
 export default function Categoria(props){
     const [inputed, setInputed] = useState('')
-    const {listaDeItems, listen, setListen} = useGetDatas('categorias')
+    const {listaDeItems, setListaDeItems, listen, setListen} = useGetDatas('categorias')
 
 
     function writeRotulo(categoria) {
@@ -26,6 +26,12 @@ export default function Categoria(props){
         }
         
       }
+
+      useEffect(() => {console.log(listaDeItems)},[listaDeItems])
+
+      const itens = listaDeItems.length > 0 && listaDeItems.map((item, index) => {return(
+        <ItemList key={index} item={item}/>
+    )})
 
     return(
         <div className="Page">
@@ -57,9 +63,7 @@ export default function Categoria(props){
                     <span>{listaDeItems.length}</span>
                 </div>
                 <div className="list-area">
-                    {listaDeItems.length > 0 && listaDeItems.map((item, index) => {return(
-                        <ItemList ket={index} item={item}/>
-                    )})}
+                    {itens}
                 </div>  
             </div>
         </div>

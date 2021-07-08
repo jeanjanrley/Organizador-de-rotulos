@@ -21,9 +21,9 @@ export default function useGetDatas(rota){
         }
         })
         
-    },[])
+    },[listen])
 
-    return{listaDeItems, listen, setListen}
+    return{listaDeItems, setListaDeItems, listen, setListen}
 
 
 }
