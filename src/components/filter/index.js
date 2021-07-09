@@ -11,14 +11,14 @@ export default function(props){
             <input
                 value={props.value}
                 onChange={(event) => props.setState(event.target.value)}
-                list={props.id}
+                list="teste"
                 name={props.id}
                 id={props.id}
                 placeholder={props.placeholder}
                 type={props.type == null ? "text" :  props.type}
             />
-            <datalist id={props.id}>
-                <option value={props.value}/>
+            <datalist id="teste">
+                <option value="cereja e aveia"/>
              </datalist>
         </div>
     )
