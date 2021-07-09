@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Aside from '../../components/aside/index'
 import Filter from '../../components/filter/index'
 import {firebase} from '../../services/firebase'
@@ -37,8 +37,7 @@ export default function Home(){
             multiplos.forEach((val) => total += val)
             const digitoVerificador = ((Math.trunc(total / 10) + 1) * 10) - total
         
-            const check = splitToDigit(digitoVerificador)
-            return(check.length != 1 ? 0 : digitoVerificador)
+            return(digitoVerificador)
             }
             else{return(0)}
         }
@@ -49,8 +48,8 @@ export default function Home(){
                 min = Math.ceil(min);
                 max = Math.floor(max);
                 ean13 += String((Math.floor(Math.random() * (max - min)) + min))
-            }while(ean13.length != 12)
-
+            }while(ean13.length < 12)
+    
             const digito = codeEan13(ean13)
             setCodigoDeBarras(ean13 + digito)
         }
