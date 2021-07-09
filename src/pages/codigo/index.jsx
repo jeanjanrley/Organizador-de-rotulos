@@ -13,7 +13,6 @@ import useGetCode from '../../hooks/getCode'
 export default function ContraRotulo(props){
     
     const [inputCodigoDeBarras, setInputCodigoDeBarras] = useState('0000000000000')
-
     const {codeEan13, getRandomEan13, codigoDeBarras, setCodigoDeBarras} = useGetCode()
     
     const { inputRef } = useBarcode({
@@ -24,6 +23,7 @@ export default function ContraRotulo(props){
           fontSize: 25,
         }
       });
+      
     const copyToClipboard = () => {
         navigator.clipboard.writeText(codigoDeBarras).then(function() {
             console.log('Async: Copying to clipboard was successful!');

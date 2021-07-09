@@ -1,8 +1,8 @@
 import React from 'react'
 import './styles.scss'
+import useGetDatas from '../../hooks/getDatas'
 
 export default function(props){
-
     return(
         <div className="filter">
             {props.title == null ? <></> :  <span>{props.title}</span>}
@@ -18,7 +18,7 @@ export default function(props){
                 type={props.type == null ? "text" :  props.type}
             />
             <datalist id="teste">
-                <option value="cereja e aveia"/>
+                
              </datalist>
         </div>
     )

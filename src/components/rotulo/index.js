@@ -6,6 +6,7 @@ import save from '../../assets/icons/save.svg'
 import edit from '../../assets/icons/edit.svg'
 import lixeira from '../../assets/icons/lixeira.svg'
 import { useBarcode } from 'react-barcodes';
+import useGetCode from '../../hooks/getCode'
 
 
 export default function Rotulo(props){
@@ -15,32 +16,8 @@ export default function Rotulo(props){
     const [validade, setValidade] = useState(props.validade)
     const [textAreaValue, setTextAreaValue] = useState(props.contraRotulo)
     const [textEdit, setTextEdit] = useState(true)
-    const [codigoDeBarras, setCodigoDeBarras] = useState(props.codigoDeBarras)
 
-
-    useEffect(() => {
-        function codeEan13(numero){
-            if(numero != 0){
-                function splitToDigit(n){return [...n + ''].map(Number)}
-        
-            const codigoNum = parseInt(numero)
-            const codigo = splitToDigit(codigoNum)
-        
-            const multiplos = codigo.map((caracter, index) => {
-                return(
-                    index % 2 === 0 ? caracter * 1 : caracter * 3
-                    )
-                })
-            var total = 0
-            multiplos.forEach((val) => total += val)
-            const digitoVerificador = ((Math.trunc(total / 10) + 1) * 10) - total
-        
-            return(digitoVerificador)
-            }
-            else{return(0)}
-        }
-        codeEan13(codigoDeBarras)
-    },[])
+    const {codigoDeBarras} = useGetCode(props.codigoDeBarras)
 
     const { inputRef } = useBarcode({
         value: codigoDeBarras == '' || codigoDeBarras == null ? '0000000000000' : codigoDeBarras,
