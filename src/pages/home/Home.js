@@ -46,7 +46,7 @@ export default function Home(){
 
                 <h1>Novo rotulo</h1>
                 <div className="filterArea">
-                    <Filter placeholder="Ex: 'Sabonete liquido..'" title="Categoria" setState={setCategoria} value={categoria}/>
+                    <Filter placeholder="Ex: 'Sabonete liquido..'" title="Categoria" setState={setCategoria} value={categoria} rota="categorias"/>
                     <Filter placeholder="Ex: 'Lavanda..'" title="Fragrancia" setState={setFragrancia} value={fragrancia}/>
                     <Medida title="Medida" setState={setMedida} value={medida}  type="number" placeholder="valor"/>
                 </div>

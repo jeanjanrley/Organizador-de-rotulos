@@ -1,8 +1,20 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './styles.scss'
 import useGetDatas from '../../hooks/getDatas'
 
 export default function(props){
+    const [rota, setRota] = useState('')
+    const [options, setOptions] = useState('')
+    
+    useEffect(() => {
+        if(props.rota){
+            setRota(props.rota)
+            const {listaDeItems, setListaDeItems, listen, setListen} = useGetDatas(rota)
+            setOptions(listaDeItems)
+        }
+    },[])
+    
+
     return(
         <div className="filter">
             {props.title == null ? <></> :  <span>{props.title}</span>}
@@ -18,7 +30,9 @@ export default function(props){
                 type={props.type == null ? "text" :  props.type}
             />
             <datalist id="teste">
-                
+                {options.length > 0 && options.map((item, index) => {return(
+                    <option key={index} value={item}/>
+                )})}
              </datalist>
         </div>
     )
