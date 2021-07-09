@@ -11,20 +11,28 @@
     justify-content: space-between;
 
     > .value{
-        color: #fff;
-        height: 15px;
-        background: none;
+        color: #232443;
+        height: 20px;
+        background: #fff;
         border: none;
+        border-radius: 3px;
+
+        &:disabled{
+            color: #fff;
+            background: none;
+        }
     }
+
+    
 
     .menu-item-list{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-items: center;
-        gap: 15px;
+        gap: 10px;
 
-        > img{
+        > img, svg{
             width: 4vh;
             height: 4vh;
         }
