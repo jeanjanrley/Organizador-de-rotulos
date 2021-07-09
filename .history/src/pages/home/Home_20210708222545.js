@@ -37,8 +37,7 @@ export default function Home(){
             multiplos.forEach((val) => total += val)
             const digitoVerificador = ((Math.trunc(total / 10) + 1) * 10) - total
         
-            const check = splitToDigit(digitoVerificador)
-            return(check.length != 1 ? 0 : digitoVerificador)
+            return(digitoVerificador)
             }
             else{return(0)}
         }
@@ -50,7 +49,8 @@ export default function Home(){
                 max = Math.floor(max);
                 ean13 += String((Math.floor(Math.random() * (max - min)) + min))
             }while(ean13.length != 12)
-
+            
+            console.log(digito)
             const digito = codeEan13(ean13)
             setCodigoDeBarras(ean13 + digito)
         }

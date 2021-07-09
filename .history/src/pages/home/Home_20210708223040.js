@@ -37,8 +37,7 @@ export default function Home(){
             multiplos.forEach((val) => total += val)
             const digitoVerificador = ((Math.trunc(total / 10) + 1) * 10) - total
         
-            const check = splitToDigit(digitoVerificador)
-            return(check.length != 1 ? 0 : digitoVerificador)
+            return(digitoVerificador.)
             }
             else{return(0)}
         }

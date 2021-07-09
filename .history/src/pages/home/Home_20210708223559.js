@@ -38,7 +38,8 @@ export default function Home(){
             const digitoVerificador = ((Math.trunc(total / 10) + 1) * 10) - total
         
             const check = splitToDigit(digitoVerificador)
-            return(check.length != 1 ? 0 : digitoVerificador)
+
+        return(check.length != 1 ? 0 : digitoVerificador)
             }
             else{return(0)}
         }

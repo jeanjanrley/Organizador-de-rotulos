@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Aside from '../../components/aside/index'
 import Filter from '../../components/filter/index'
 import {firebase} from '../../services/firebase'
@@ -20,43 +20,40 @@ export default function Home(){
     const [codigoDeBarras, setCodigoDeBarras] = useState('0000000000000')
 
 
-    useEffect(() => {
-        function codeEan13(numero){
-            if(numero != 0){
-                function splitToDigit(n){return [...n + ''].map(Number)}
-        
-            const codigoNum = parseInt(numero)
-            const codigo = splitToDigit(codigoNum)
-        
-            const multiplos = codigo.map((caracter, index) => {
-                return(
-                    index % 2 === 0 ? caracter * 1 : caracter * 3
-                    )
-                })
-            var total = 0
-            multiplos.forEach((val) => total += val)
-            const digitoVerificador = ((Math.trunc(total / 10) + 1) * 10) - total
-        
-            const check = splitToDigit(digitoVerificador)
-            return(check.length != 1 ? 0 : digitoVerificador)
-            }
-            else{return(0)}
-        }
+    useEffect(() => {function codeEan13(numero){
+        if(numero != 0){
+            function splitToDigit(n){return [...n + ''].map(Number)}
     
-        function getRandomEan13(min = 0, max = 9) {
-            var ean13 = ''
-            do{
-                min = Math.ceil(min);
-                max = Math.floor(max);
-                ean13 += String((Math.floor(Math.random() * (max - min)) + min))
-            }while(ean13.length != 12)
+        const codigoNum = parseInt(numero)
+        const codigo = splitToDigit(codigoNum)
+    
+        const multiplos = codigo.map((caracter, index) => {
+            return(
+                index % 2 === 0 ? caracter * 1 : caracter * 3
+                )
+            })
+        var total = 0
+        multiplos.forEach((val) => total += val)
+        const digitoVerificador = ((Math.trunc(total / 10) + 1) * 10) - total
+    
+        return(digitoVerificador)
+        }
+        else{return(0)}
+    }
 
-            const digito = codeEan13(ean13)
-            setCodigoDeBarras(ean13 + digito)
-        }
+    function getRandomEan13(min = 0, max = 9) {
+        var ean13 = ''
+        do{
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            ean13 += String((Math.floor(Math.random() * (max - min)) + min))
+        }while(ean13.length < 12)
+
+        const digito = codeEan13(ean13)
+        setCodigoDeBarras(ean13 + digito)
+    }
     
-        getRandomEan13()
-    }, [])
+    },[])
 
 
     function writeRotulo (categoria, fragrancia, medida, lote, data, validade, responsavel, contraRotulo, codigoDeBarras) {
