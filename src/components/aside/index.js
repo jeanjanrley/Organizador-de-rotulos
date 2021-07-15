@@ -10,7 +10,7 @@ export default function CodigoDeBarras() {
     return(
         <aside>
             <div className="add">
-                    <img src={add} />
+                    <img src={add} alt="adcionar novos itens"/>
                 <Link className="Link" to={'/'}>
                     N-R
                 </Link>
@@ -19,7 +19,7 @@ export default function CodigoDeBarras() {
                 </Link>
             </div>
             <div className="prancher">
-                    <img src={prancher} />
+                    <img src={prancher} alt="editar tipos"/>
                 <Link className="Link" to={'/categoria'}>
                     CAT
                 </Link>
@@ -35,12 +35,12 @@ export default function CodigoDeBarras() {
             </div>
             <div className="direct unic">
                 <Link className="Link" to={'/send'}>
-                    <img src={direct} />
+                    <img src={direct} alt="enviar"/>
                 </Link>
             </div>
             <div className="codigo unic">
                 <Link className="Link" to={'/codigo-de-barras'}>
-                    <img src={codigo} />
+                    <img src={codigo} alt="codigo de barras"/>
                 </Link>
             </div>
         </aside>

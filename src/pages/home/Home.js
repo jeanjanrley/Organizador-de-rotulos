@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Aside from '../../components/aside/index'
 import Filter from '../../components/filter/index'
 import {firebase} from '../../services/firebase'
@@ -17,11 +17,11 @@ export default function Home(){
     const [data, setData] = useState({})
     const [validade, setValidade] = useState(null)
     const [responsavel, setResponsavel] = useState('')
-    const [contraRotulo, setContraRotulo] = useState('')
     const [contraRotulos, setContraRotulos] = useState('')
+    const [contraRotulo, setContraRotulo] = useState('')
     
     const {codigoDeBarras} = useGetCode()
-    const {listaDeItems, setListaDeItems, listen, setListen} = useGetDatas('contra-rotulos')
+    const {listaDeItems} = useGetDatas('contra-rotulos')
 
 
 
@@ -38,6 +38,25 @@ export default function Home(){
           codigoDeBarras: codigoDeBarras,
         });
       }
+
+      function getContraRotulo(contraRotulo){
+        var categorias = firebase.database().ref(`contra-rotulos/${contraRotulo}`);
+        categorias.on('value', (snapshot) => {
+        if(snapshot.val()){
+            const data = snapshot.val();
+            const arrayDeArrays = Object.entries(data)
+            const arrayDeItems = arrayDeArrays.map(([key, value]) => {return(value)})
+            setCategoria(arrayDeItems[0])
+            setContraRotulo(arrayDeItems[1])
+            setFragrancia(arrayDeItems[2])
+            setLote(arrayDeItems[3])
+            }
+        else{
+        }
+        })
+    }
+
+    useEffect(() => getContraRotulo(contraRotulos), [contraRotulos])
 
 
 
@@ -81,10 +100,10 @@ export default function Home(){
                         </div>
                         
                         <div className="sub-filters-area">
-                            <Filter className="Filter" placeholder="lote da fragrancia" setState={setLote}/>
+                            <Filter className="Filter" placeholder="lote da fragrancia" setState={setLote} value={lote}/>
                             <Filter className="Filter" subTitle="data de produção" placeholder="Data de produção" type="date" setState={setData} value={data}/>
-                            <Filter className="Filter" type="number" placeholder="Validade em anos" setState={setValidade}/>
-                            <Filter className="Filter" placeholder="Responsavel tecnico" setState={setResponsavel} rota="responsaveis-tecnicos"/>
+                            <Filter className="Filter" type="number" placeholder="Validade em anos" setState={setValidade} value={validade}/>
+                            <Filter className="Filter" placeholder="Responsavel tecnico" setState={setResponsavel} rota="responsaveis-tecnicos" value={responsavel}/>
                         </div>
 
 

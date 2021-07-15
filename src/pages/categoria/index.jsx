@@ -13,7 +13,7 @@ import ItemList from '../../components/itemList/index'
 
 export default function Categoria(props){
     const [inputed, setInputed] = useState('')
-    const {listaDeItems, setListaDeItems, listen, setListen} = useGetDatas('categorias')
+    const {listaDeItems, listen, setListen} = useGetDatas('categorias')
 
 
     function writeRotulo(categoria) {

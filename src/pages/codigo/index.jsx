@@ -16,7 +16,7 @@ export default function ContraRotulo(props){
     const {codeEan13, getRandomEan13, codigoDeBarras, setCodigoDeBarras} = useGetCode()
     
     const { inputRef } = useBarcode({
-        value: codigoDeBarras == '' ? '0000000000000' : codigoDeBarras,
+        value: codigoDeBarras === '' ? '0000000000000' : codigoDeBarras,
         options: {
           background: '#ffff',
           height: 130,

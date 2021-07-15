@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './styles.scss'
 import useGetDatas from '../../hooks/getDatas.js'
 
-export default function({rota, ...props}){
-    const {listaDeItems, setListaDeItems, listen, setListen} = useGetDatas(rota)
+export default function Filter({rota, ...props}){
+    const {listaDeItems} = useGetDatas(rota)
 
     
 

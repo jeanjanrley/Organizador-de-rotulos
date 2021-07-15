@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.scss'
 
-export default function(props){
+export default function medida(props){
 
     return(
         <div className="medida">

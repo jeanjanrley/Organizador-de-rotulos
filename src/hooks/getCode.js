@@ -4,7 +4,7 @@ export default function useGetCode(inputCod){
     const [codigoDeBarras, setCodigoDeBarras] = useState('0000000000000')
 
     function codeEan13(numero){
-        if(numero != 0){
+        if(numero !== 0){
             function splitToDigit(n){return [...n + ''].map(Number)}
     
         const codigoNum = parseInt(numero)
@@ -20,7 +20,7 @@ export default function useGetCode(inputCod){
         const digitoVerificador = ((Math.trunc(total / 10) + 1) * 10) - total
     
         const check = splitToDigit(digitoVerificador)
-        return(check.length != 1 ? 0 : digitoVerificador)
+        return(check.length !== 1 ? 0 : digitoVerificador)
         }
         else{return(0)}
     }
@@ -31,7 +31,7 @@ export default function useGetCode(inputCod){
             min = Math.ceil(min);
             max = Math.floor(max);
             ean13 += String((Math.floor(Math.random() * (max - min)) + min))
-        }while(ean13.length != 12)
+        }while(ean13.length !== 12)
 
         const digito = codeEan13(ean13)
         setCodigoDeBarras(ean13 + digito)

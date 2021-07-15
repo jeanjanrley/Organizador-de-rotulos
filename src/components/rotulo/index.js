@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {firebase} from '../../services/firebase'
 import './style.scss'
-import codigo from '../../assets/icons/codigo.png'
 import save from '../../assets/icons/save.svg'
 import edit from '../../assets/icons/edit.svg'
 import lixeira from '../../assets/icons/lixeira.svg'
@@ -20,10 +19,10 @@ export default function Rotulo(props){
     const {codigoDeBarras} = useGetCode(props.codigoDeBarras)
 
     const { inputRef } = useBarcode({
-        value: codigoDeBarras == '' || codigoDeBarras == null ? '0000000000000' : codigoDeBarras,
+        value: codigoDeBarras === '' || codigoDeBarras === null ? '0000000000000' : codigoDeBarras,
         options: {
           background: '#ffff',
-          height: codigoDeBarras == '' || codigoDeBarras == null ? 150 : 110,
+          height: codigoDeBarras === '' || codigoDeBarras === null ? 150 : 110,
           fontSize: 25,
         }
       });
@@ -91,7 +90,7 @@ export default function Rotulo(props){
                     <div>
                         <span>D. Prod:</span>
                         <input
-                            type = {textEdit == false && "date"}
+                            type = {textEdit === false && "date"}
                             disabled = {textEdit}
                             className="input-list"
                             value={data}
@@ -102,7 +101,7 @@ export default function Rotulo(props){
                     <div>
                         <span>D. Val:</span>
                         <input 
-                            type = {textEdit == false && "date"}
+                            type = {textEdit === false && "date"}
                             disabled = {textEdit}
                             className="input-list"
                             value={validade}

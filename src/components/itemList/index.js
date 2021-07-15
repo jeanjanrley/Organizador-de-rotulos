@@ -5,7 +5,7 @@ import lixeira from '../../assets/icons/lixeira.svg'
 import edit from '../../assets/icons/edit.svg'
 import {firebase} from '../../services/firebase'
 
-export default function(props){
+export default function ItemList(props){
     const [textEdit, setTextEdit] = useState(true)
     const item = props.item
     const [value, setValue] = useState(props.item)
